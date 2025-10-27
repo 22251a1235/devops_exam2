@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind : Deployment 
+metadata :
+  app: mywebapp-deployment 
+spec: 
+  replicas : 4
+  selector :
+    matchLabels: 
+      app: mywebapp
+  template:
+    metadata: 
+      labels:
+        app: mywebapp
+    spec:
+      containers: 
+        -name : mywebapp 
+        image : shivani1128/sample:latest 
+      port :
+        -containerPorts : 5000
